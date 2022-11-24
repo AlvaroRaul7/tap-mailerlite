@@ -8,6 +8,7 @@ from memoization import cached
 
 from singer_sdk.helpers.jsonpath import extract_jsonpath
 from singer_sdk.streams import RESTStream
+
 from singer_sdk.authenticators import BearerTokenAuthenticator
 
 
@@ -30,6 +31,7 @@ class mailerliteStream(RESTStream):
     next_page_token_jsonpath = "$.next_page"  # Or override `get_next_page_token`.
 
     @property
+
     def authenticator(self) -> BearerTokenAuthenticator:
         """Return a new authenticator object."""
         return BearerTokenAuthenticator.create_for_stream(
