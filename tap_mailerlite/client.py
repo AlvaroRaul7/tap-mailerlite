@@ -19,7 +19,7 @@ class mailerliteStream(RESTStream):
     """mailerlite stream class."""
 
     # TODO: Set the API's base URL here:
-    url_base = "https://api.mysample.com"
+    url_base = "https://connect.mailerlite.com/api"
 
     # OR use a dynamic url_base:
     # @property
@@ -27,7 +27,8 @@ class mailerliteStream(RESTStream):
     #     """Return the API URL root, configurable via tap settings."""
     #     return self.config["api_url"]
 
-    records_jsonpath = "$[*]"  # Or override `parse_response`.
+    # records_jsonpath = "$[*]"  # Or override `parse_response`.
+    records_jsonpath = "$.data.[*]"
     next_page_token_jsonpath = "$.next_page"  # Or override `get_next_page_token`.
 
     @property
@@ -36,7 +37,7 @@ class mailerliteStream(RESTStream):
         """Return a new authenticator object."""
         return BearerTokenAuthenticator.create_for_stream(
             self,
-            token=self.config.get("api_key")
+            token=self.config.get("auth_token")
         )
 
     @property

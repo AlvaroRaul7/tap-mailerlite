@@ -1,0 +1,3 @@
+id,name,active_count,sent_count,opens_count,open_rate__float,open_rate__string,clicks_count,click_rate__float,click_rate__string,unsubscribed_count,unconfirmed_count,bounced_count,junk_count,created_at
+72635248536454950,dummy group,5,0,0,0,0%,0,0,0%,0,0,0,0,2022-11-24 06:12:50
+72636898698331716,dummy group 2,1,0,0,0,0%,0,0,0%,0,0,0,0,2022-11-24 06:39:04

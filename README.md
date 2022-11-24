@@ -73,13 +73,29 @@ tap-mailerlite --config CONFIG --discover > ./catalog.json
 
 Follow these instructions to contribute to this project.
 
-### Initialize your Development Environment
+
+
+### Install Singer Discover in your local environment
 
 ```bash
-pipx install poetry
+pip install https://github.com/chrisgoddard/singer-discover/archive/master.zip
+```
+
+### Initialize your Development Environment for the Tap
+
+```bash
+source venv/bin/activate
+pip install poetry
 poetry install
 ```
 
+### Initialize your Development Environment for the Target
+
+```bash
+python3 -m venv ~/.virtualenvs/target-csv
+source ~/.virtualenvs/target-csv/bin/activate
+pip install target-csv
+```
 ### Create and Run Tests
 
 Create tests within the `tap_mailerlite/tests` subfolder and
